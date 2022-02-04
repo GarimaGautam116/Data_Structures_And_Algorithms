@@ -10,6 +10,7 @@ Sample Output:
 
 import java.util.Scanner;
 
+public class stringToInt
 {
     static int sum=0;
     public static int convert(String s, int index)
