@@ -61,7 +61,11 @@ public class StackUsingArray{
         System.out.println(".");
         System.out.println("----------------------");
     }
-
+    
+    public void deleteStack(){
+        data=null;
+        System.out.println("Stack is deleted");
+        
     public static void main(String[] args) throws Exception {
         //Scanner sc = new Scanner(System.in);
         //System.out.println(" enter the size of array");
