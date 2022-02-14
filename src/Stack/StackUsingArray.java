@@ -1,11 +1,11 @@
 package Stack;
 
-import java.util.Scanner;
+//import java.util.Scanner;
 
 public class StackUsingArray{
     // declaraton
-    int data[];
-    int tos;
+    private int data[];
+    private int tos;
     // initialization
     StackUsingArray(int n){
         data = new int[n];
