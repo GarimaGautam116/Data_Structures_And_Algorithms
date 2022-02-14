@@ -1,13 +1,11 @@
 package Stack;
 
-//import java.util.Scanner;
-
-public class StackUsingArray{
+public class Stack{
     // declaraton
     private int data[];
     private int tos;
     // initialization
-    StackUsingArray(int n){
+    Stack(int n){
         data = new int[n];
         tos = -1;
     }
@@ -30,7 +28,7 @@ public class StackUsingArray{
         int temp = data[tos];
         data[tos]=0;
         tos--;
-         return temp;
+        return temp;
     }
 
     // method to get value at top
@@ -44,7 +42,7 @@ public class StackUsingArray{
 
     // method to check is stack empty
     public boolean isEmpty(){
-            return size() == 0;
+        return size() == 0;
     }
     // method to check is stack full
     public boolean isFull(){
@@ -68,21 +66,18 @@ public class StackUsingArray{
         //Scanner sc = new Scanner(System.in);
         //System.out.println(" enter the size of array");
         int size = 5;   //sc.nextInt();
-        StackUsingArray s = new StackUsingArray(size);
+        Stack s = new Stack(size);
         s.push(10);
         s.push(20);
         s.push(30);
         s.push(40);
         s.push(50);
         s.display();
-        s.push(60);
-        s.display();
         System.out.println(s.pop());
         System.out.println(s.pop());
         s.display();
         System.out.println(s.peek());
         System.out.println(s.size());
-
-
     }
 }
+
