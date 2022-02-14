@@ -1,11 +1,11 @@
 package Stack;
 
-public class Stack{
+public class StackUsingArray{
     // declaraton
     private int data[];
     private int tos;
     // initialization
-    Stack(int n){
+    StackUsingArray(int n){
         data = new int[n];
         tos = -1;
     }
@@ -66,7 +66,7 @@ public class Stack{
         //Scanner sc = new Scanner(System.in);
         //System.out.println(" enter the size of array");
         int size = 5;   //sc.nextInt();
-        Stack s = new Stack(size);
+        StackUsingArray s = new StackUsingArray(size);
         s.push(10);
         s.push(20);
         s.push(30);
