@@ -36,19 +36,16 @@ public class BinaryTreeUsingArray {
 
     public static void main(String[] args) {
         BinaryTreeUsingArray obj=new BinaryTreeUsingArray(5);
-        obj.insert(10);
-        obj.insert(20);
-        obj.insert(30);
-        obj.insert(40);
-        obj.insert(50);
-        System.out.println("---------------");
+        obj.insert(45);
+        obj.insert(33);
+        obj.insert(22);
+        obj.insert(15);
+        obj.insert(16);
         obj.preorder(1);
-        System.out.println("---------------");
         obj.search(25);
-        obj.search(30);
-        System.out.println("---------------");
-        obj.delete(40);
-        System.out.println("---------------");
+        obj.search(22);
+        obj.delete(45);
         obj.preorder(1);
     }
 }
+
