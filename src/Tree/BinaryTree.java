@@ -1,6 +1,7 @@
 package Tree;
 
 import java.util.Scanner;
+import java.util.Stack;
 
 public class BinaryTree {
     Node root;
@@ -8,7 +9,6 @@ public class BinaryTree {
         int data;
         Node left;
         Node right;
-
         public Node(int data){
             this.data = data;
         }
@@ -30,13 +30,32 @@ public class BinaryTree {
         n2.right = n5; //40---20---50---10----30
     }
     // using recursion
-    public void preOrderTraversal(Node root) {
-        if (root == null) {
-            return;
+//    public void preOrderTraversal(Node root) {
+//        if (root == null) {
+//            return;
+//        }
+//        System.out.println(root.data + " ");
+//        preOrderTraversal(root.left);
+//        preOrderTraversal(root.right);
+//    }
+
+    //without recursion
+    public void preOrderTraversal(Node root){
+        if(root == null){
+            return ;
         }
-        System.out.println(root.data + " ");
-        preOrderTraversal(root.left);
-        preOrderTraversal(root.right);
+        Stack<Node> stack = new Stack<>();
+        stack.push(root);
+        while(!stack.isEmpty()) {
+            Node temp = stack.pop();
+            System.out.println(temp.data);
+            if (temp.right != null) {
+                stack.push(temp.right);
+            }
+            if (temp.left != null) {
+                stack.push(temp.left);
+            }
+        }
     }
 
     public static void main(String[] args) {
