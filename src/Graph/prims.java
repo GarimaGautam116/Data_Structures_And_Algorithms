@@ -14,13 +14,17 @@ public class prims
             weight[i] = Integer.MAX_VALUE;
         }
 
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++)
+        {
             int minvertix = findminimum(visited, weight);
             visited[minvertix] = true;
 
-            for (int j = 0; j < n; j++) {
-                if (matrix[minvertix][j] != 0 && !visited[j]) {
-                    if (weight[j] > matrix[minvertix][j]) {
+            for (int j = 0; j < n; j++)
+            {
+                if (matrix[minvertix][j] != 0 && !visited[j])
+                {
+                    if (weight[j] > matrix[minvertix][j])
+                    {
                         weight[j] = matrix[minvertix][j];
                         parent[j] = minvertix;
                     }
