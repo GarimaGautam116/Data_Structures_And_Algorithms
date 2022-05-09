@@ -24,9 +24,8 @@ public class BubbleSort{
         Scanner sc = new Scanner(System.in);
         System.out.println("enter the size of array");
         int arr[]=new int[sc.nextInt()];
-        int i=0;
         System.out.println("enter the elements of array");
-        for(i=0;i<arr.length;i++){
+        for(int i=0;i<arr.length;i++){
             arr[i]=sc.nextInt();
         }
        bubbleSort(arr);
