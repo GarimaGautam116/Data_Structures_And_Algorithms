@@ -1,5 +1,4 @@
 package Tree;
-
 import java.util.Scanner;
 import java.util.Stack;
 
@@ -9,7 +8,8 @@ public class BinaryTree {
         int data;
         Node left;
         Node right;
-        public Node(int data){
+        public Node(int data)
+        {
             this.data = data;
         }
     }
