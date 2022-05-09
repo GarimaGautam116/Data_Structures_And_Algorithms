@@ -6,7 +6,7 @@ public class SelectionSort {
         for(int counter =0;counter<arr.length-1;counter++){
            int min = counter;
             for(int j=counter+1;j<arr.length;j++){
-                if(arr[j] < arr[min]){
+                if(arr[min]>arr[j]){
                     min = j;
                 }
             }
