@@ -31,7 +31,8 @@ public class kruskal_demo
         for (int j = 0; j < v; j++) {
             parent[j] = j;
         }
-        while (count != v-1) {
+        while (count != v-1)
+        {
             Edge currentedge = edges[i++];
             int v1parent = findparent(currentedge.v1, parent);
             int v2parent = findparent(currentedge.v2, parent);
