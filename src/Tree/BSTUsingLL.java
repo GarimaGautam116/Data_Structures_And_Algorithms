@@ -1,66 +1,97 @@
 package Tree;
 
-public class BSTUsingLL {
+import java.util.Scanner;
+
+public class BST_using_LL {
     static Node root;
     static class Node{
         int data;
-        Node left;
-        Node right;
-        public Node(int data) {
-            this.data = data;
-        }
+        Node left , right;
+        Node(int data){
+                this.data = data;
+            }
     }
-    public static Node insert(Node root,int val){
-        Node newnode=new Node(val);
-        if(root==null){
-            root=newnode;
+
+    public static Node insert(Node root, int val){
+        Node newnode = new Node(val);
+        if(root == null) {
+            root = newnode;
             return root;
         }
-        if(root.data>val){
-            if(root.left==null)
-                root.left=newnode;
-            else {
-                insert(root.left,val);
-            }
-        }
-        if(root.data<val){
-            if(root.right==null)
-                root.right=newnode;
+        if(val< root.data) {
+            if (root.left == null)
+                root.left = newnode;
             else
-                insert(root.right,val);
+                insert(root.left, val);
+        }
+        if(val> root.data) {
+            if (root.right == null)
+                root.right = newnode;
+            else
+                insert(root.right, val);
         }
         return root;
     }
+
     public void printpreorder(Node root){
-        Node r1=root;
+        Node r1 = root;
         if(r1!=null){
-            System.out.println(r1.data);
+            System.out.print(r1.data+" ");
             printpreorder(r1.left);
             printpreorder(r1.right);
         }
     }
-    public static boolean search(Node root,int value){
+
+    public static boolean search(Node root , int val){
         boolean result;
-        if(root==null)
+        if(root == null)
             return false;
-        if(root.data==value)
+        if(root.data == val)
             return true;
-        if(root.data>value)
-            result=search(root.left,value);
+        if(root.data>val)
+            result = search(root.left,val);
         else
-            result=search(root.right,value);
+            result = search(root.right,val);
         return result;
     }
-    public static void main(String[] args) {
-        BSTUsingLL obj=new BSTUsingLL();
-        root=new Node(15);
-        root.left=new Node(10);
-        root.left.left=new Node(8);
-        root.right=new Node(20);
-        obj.insert(root.left,12);
-        obj.printpreorder(root);
-        System.out.println(obj.search(root,8));
-        System.out.println(obj.search(root,80));
-    }
-}
 
+    public static int minvalue(Node root){
+        int minv = root.data;
+        if(root.left != null){
+            minv = root.left.data;
+            root = root.left;
+        }
+        return minv;
+    }
+    public static Node deleteNode(Node root , int key){
+        if(root == null)
+            return null;
+        if(key<root.data)
+            root.left = deleteNode(root.left,key);
+        else if (key>root.data)
+            root.right = deleteNode(root.right,key);   //call lgane ke bad konsi value root.right mai return hookar ayegi ??
+            // case
+        else{     //case of 1 child
+            if(root.left == null){
+                return root.right;
+            }
+            else if ( root.right == null)
+                return root.left;
+            //when both children are present
+            root.data = minvalue(root.right);
+            root.right = deleteNode(root.right , root.data);
+        }
+        return root;
+    }
+
+        public static void main(String[] args) {
+            BST_using_LL obj =new BST_using_LL();
+            Scanner sc = new Scanner(System.in);
+            int n = sc.nextInt();
+            for (int i = 0; i < n; i++) {
+                int num = sc.nextInt();
+                root = insert(root,num);
+            }
+            obj.printpreorder(root);
+        }
+}
