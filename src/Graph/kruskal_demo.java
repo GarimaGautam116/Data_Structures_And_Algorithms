@@ -84,4 +84,3 @@ public class kruskal_demo
             }
         }
     }
-
